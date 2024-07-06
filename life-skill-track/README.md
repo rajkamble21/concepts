@@ -43,6 +43,9 @@ Servers can temporarily extend or customize the functionality of a client by tra
 
 <img src="https://github.com/rajkamble21/concepts/assets/70090963/ddea3e6e-d148-446f-9d18-3180b99b24de" alt="RESTAPI" style="width:300%; height:300px;" />
 
+<img src="https://github.com/rajkamble21/concepts/assets/70090963/81659312-af17-4c4b-bb36-f644a60e836d" alt="RESTAPI" style="width:500%; height:500px;" />
+
+
 ### 1. Resources
 
 Resources are the key abstraction in REST. Each resource is identified by a unique URI. Resources can be documents, images, collections, or non-virtual objects.
@@ -91,6 +94,8 @@ PUT /users/{id}
 DELETE /users/{id}
 PATCH /users/{id}
 ```
+
+
 
 ## ✅ Advantages of REST
 
