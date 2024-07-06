@@ -1,14 +1,15 @@
-# REST Architecture
+# 🌐 REST Architecture
 
 ![rest_api](https://github.com/rajkamble21/concepts/assets/70090963/bb6b3c5b-7b26-46d4-acb8-ef8ac4b385ee)
 
-## Introduction
+## 📘 Introduction
 
 Representational State Transfer (REST) is a style of software architecture for distributed systems like the web. Restfull apis provide a way to access database resources through server in a secure and easy way. This document will discuss the principles, components, and advantages of REST architecture in detail.
 
-## Principles of REST
+## 📚 Principles of REST
 
-![What-is-REST](https://github.com/rajkamble21/concepts/assets/70090963/41b5d5fd-c576-4a4c-9b27-285f229f56ac)
+
+<img src="https://github.com/rajkamble21/concepts/assets/70090963/41b5d5fd-c576-4a4c-9b27-285f229f56ac" alt="RESTAPI" style="width:500px; height:300px;" />
 
 REST is defined by several key principles:
 
@@ -36,7 +37,9 @@ The uniform interface simplifies and decouples the architecture, allowing each p
 
 Servers can temporarily extend or customize the functionality of a client by transferring executable code. This is an optional constraint in REST.
 
-## Components of REST
+## 🛠️ Components of REST
+
+<img src="https://github.com/rajkamble21/concepts/assets/70090963/ddea3e6e-d148-446f-9d18-3180b99b24de" alt="RESTAPI" style="width:300%; height:300px;" />
 
 ### 1. Resources
 
@@ -77,7 +80,7 @@ HTTP status codes indicate the result of an HTTP request:
 
 
 
-## Example RESTful API
+## 🚀 Example RESTful API
 
 ```http
 GET /users
@@ -88,18 +91,18 @@ DELETE /users/{id}
 PATCH /users/{id}
 ```
 
-## Advantages of REST
+## ✅ Advantages of REST
 
 - **Scalability**: Statelessness and the layered system improve scalability.
 - **Flexibility**: The uniform interface allows different parts of the system to evolve independently.
 - **Performance**: Caching reduces the number of interactions between client and server.
 - **Simplicity**: RESTful APIs are easy to understand and use due to their reliance on standard HTTP methods and status codes.
 
-## REST vs. Other Architectural Styles
+## 📊 REST vs. Other Architectural Styles
 
-REST API is flexible and widely used for web services, GraphQL allows clients to request specific data, and SOAP is highly secure, suitable for enterprise-level applications.
+REST API is flexible and widely used for web services. GraphQL allows clients to request specific data, and SOAP is highly secure, suitable for enterprise-level applications.
 
-| **Aspect**              | **REST API**                      | **GraphQL**                           | **SOAP**                              |
+| 🛠️ **Aspect**           | 🌐 **REST API**                  | 🌀 **GraphQL**                        | 🏢 **SOAP**                           |
 |-------------------------|-----------------------------------|---------------------------------------|---------------------------------------|
 | **Protocol**            | HTTP                              | HTTP                                  | HTTP, SMTP, TCP, more                 |
 | **Data Format**         | JSON, XML, etc.                   | JSON                                  | XML                                   |
@@ -113,11 +116,12 @@ REST API is flexible and widely used for web services, GraphQL allows clients to
 | **Use Case**            | Web services, microservices       | Mobile and web applications needing specific data | Enterprise-level applications requiring high security and transactional reliability |
 
 
-## Conclusion
+
+## 📝 Conclusion
 
 RESTful architecture is a powerful and flexible way to design web services. By following its principles and constraints, developers can create scalable, high-performance, and easy-to-maintain systems. Understanding REST is essential for building modern web applications and APIs.
 
-## References
+## 📚 References
 
 * [What is REST?](https://www.geeksforgeeks.org/rest-api-introduction/)
 * [REST API Introduction](https://restfulapi.net/)
