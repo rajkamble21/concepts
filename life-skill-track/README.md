@@ -1,8 +1,10 @@
 # 🌐 REST Architecture
 
-![rest_api](https://github.com/rajkamble21/concepts/assets/70090963/bb6b3c5b-7b26-46d4-acb8-ef8ac4b385ee)
 
 ## 📘 Introduction
+
+![rest_api](https://github.com/rajkamble21/concepts/assets/70090963/bb6b3c5b-7b26-46d4-acb8-ef8ac4b385ee)
+
 
 Representational State Transfer (REST) is a style of software architecture for distributed systems like the web. Restfull apis provide a way to access database resources through server in a secure and easy way. This document will discuss the principles, components, and advantages of REST architecture in detail.
 
@@ -79,7 +81,6 @@ HTTP status codes indicate the result of an HTTP request:
 - **500 Internal Server Error**: An error occurred on the server.
 
 
-
 ## 🚀 Example RESTful API
 
 ```http
@@ -100,7 +101,7 @@ PATCH /users/{id}
 
 ## 📊 REST vs. Other Architectural Styles
 
-REST API is flexible and widely used for web services. GraphQL allows clients to request specific data, and SOAP is highly secure, suitable for enterprise-level applications.
+Apart from REST there are another architectures as well which are widely used in the web development like GraphQL (GraphQL Query Language) & SOAP (Simple Objects Access Protocol). 
 
 | 🛠️ **Aspect**           | 🌐 **REST API**                  | 🌀 **GraphQL**                        | 🏢 **SOAP**                           |
 |-------------------------|-----------------------------------|---------------------------------------|---------------------------------------|
@@ -109,8 +110,6 @@ REST API is flexible and widely used for web services. GraphQL allows clients to
 | **Flexibility**         | Flexible                          | Highly flexible, client specifies     | Less flexible, server-driven          |
 | **Complexity**          | Moderate                          | Moderate to high                      | High                                  |
 | **Performance**         | Good (over-fetching/under-fetching issues) | High (fetch only needed data)       | Moderate (larger payloads)            |
-| **Caching**             | Yes                               | No                                    | No                                    |
-| **Versioning**          | URL versioning                    | No versioning, single endpoint        | Uses different services for versions  |
 | **Error Handling**      | HTTP status codes                 | Custom error codes                    | SOAP faults                           |
 | **Security**            | OAuth, JWT                        | OAuth, JWT                            | WS-Security                           |
 | **Use Case**            | Web services, microservices       | Mobile and web applications needing specific data | Enterprise-level applications requiring high security and transactional reliability |
