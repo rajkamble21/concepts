@@ -15,25 +15,26 @@ Representational State Transfer (REST) is a style of software architecture for d
 
 REST is defined by several key principles:
 
-### 1. Client-Server Architecture
+
+### 1. Uniform Interface
+
+The uniform interface simplifies and decouples the architecture, allowing each part to evolve independently. It includes the use of standard methods like GET, POST, PUT, DELETE, and a consistent way to access resources.
+
+### 2. Client-Server Architecture
 
 In REST, the client and server are separate entities. This separation allows each part to be developed and updated independently. The client handles the user interface, while the server manages the data.
 
-### 2. Statelessness
+### 3. Statelessness
 
 Each request from a client to a server must contain all the information needed to understand and process the request. The server does not store any client context between requests. This means each request is independent.
 
-### 3. Cacheability
+### 4. Cacheability
 
 Responses from the server must indicate whether they can be cached by the client. Caching improves performance by reducing the number of interactions between the client and server.
 
-### 4. Layered System
+### 5. Layered System
 
 A client cannot tell whether it is connected directly to the end server or to an intermediary along the way. Intermediaries can improve scalability by enabling load balancing and caching.
-
-### 5. Uniform Interface
-
-The uniform interface simplifies and decouples the architecture, allowing each part to evolve independently. It includes the use of standard methods like GET, POST, PUT, DELETE, and a consistent way to access resources.
 
 ### 6. Code on Demand (Optional)
 
