@@ -6,7 +6,7 @@
 ![rest_api](https://github.com/rajkamble21/concepts/assets/70090963/bb6b3c5b-7b26-46d4-acb8-ef8ac4b385ee)
 
 
-Representational State Transfer (REST) is a style of software architecture for distributed systems like the web. Restfull apis provide a way to access database resources through server in a secure and easy way. This document will discuss the principles, components, and advantages of REST architecture in detail.
+Representational State Transfer (REST) is a style of software architecture for distributed systems like the web. Restfull apis provide a way to access database resources through server in a secure and easy way. REST API is a way of accessing web services in a simple and flexible way without having any processing. This document will discuss the principles, components, advantages of REST architecture in detail, difference between REST and other architectures.
 
 ## 📚 Principles of REST
 
@@ -96,12 +96,11 @@ PATCH /users/{id}
 ```
 
 
-
 ## ✅ Advantages of REST
 
 - **Scalability**: Statelessness and the layered system improve scalability.
 - **Flexibility**: The uniform interface allows different parts of the system to evolve independently.
-- **Performance**: Caching reduces the number of interactions between client and server.
+- **Performance**: Reduced the number of interactions between client and server.
 - **Simplicity**: RESTful APIs are easy to understand and use due to their reliance on standard HTTP methods and status codes.
 
 ## 📊 REST vs. Other Architectural Styles
