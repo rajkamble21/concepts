@@ -18,10 +18,5 @@ JavaScript execution involves two main stages: creation and execution. These sta
   * **Function Execution Contexts:** Whenever a function is called, a new execution context is created specifically for that function. This context keeps track of the function's arguments, local variables, and its own variable/function bindings.
   * **Call Stack:** The JavaScript engine uses a call stack to manage the order of function executions. When a function is called, its context is pushed onto the stack. When the function finishes running (usually by reaching a `return` statement), its context is popped from the stack, and execution resumes in the context where the function was called.
 
-**Key Concepts:**
 
-* **Single-Threaded:** JavaScript is single-threaded, meaning it can only execute one task at a time. The call stack ensures that functions are executed in the order they are called.
-* **Just-in-Time (JIT) Compilation:** Modern JavaScript engines use JIT compilation, which translates parts of your code into machine code for faster execution.
-
-Understanding execution contexts and the flow of code execution is essential for writing clean, maintainable, and bug-free JavaScript programs.
 
