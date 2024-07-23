@@ -159,3 +159,143 @@ https://localhost:5000/users/profile?username=mountblue
 `- Scheme/Protocol: https
 ```
 
+---
+
+# What are few commonly used HTTP request methods?
+
+HTTP request methods are used to perform various actions on the resources identified by URLs. Here are a few commonly used HTTP request methods:
+
+## Commonly Used HTTP Request Methods
+
+### 1. GET
+- **Purpose**: Retrieve data from the server.
+- **Usage**: When you want to fetch data without making any changes to it.
+- **Characteristics**:
+  - Can be cached.
+  - Remains in the browser history.
+  - Can be bookmarked.
+  - Should not be used for sensitive data as it is exposed in the URL.
+- **Example**: Retrieving a webpage or an image.
+  - `GET /index.html HTTP/1.1`
+
+### 2. POST
+- **Purpose**: Send data to the server to create a new resource.
+- **Usage**: When submitting form data or uploading a file.
+- **Characteristics**:
+  - Cannot be cached.
+  - Does not remain in the browser history.
+  - Cannot be bookmarked.
+  - Data is sent in the body of the request.
+- **Example**: Submitting a registration form.
+  - `POST /users/register HTTP/1.1`
+
+### 3. PUT
+- **Purpose**: Send data to the server to update an existing resource.
+- **Usage**: When updating user details or modifying data on the server.
+- **Characteristics**:
+  - Idempotent (multiple identical requests have the same effect as a single request).
+  - Data is sent in the body of the request.
+- **Example**: Updating user profile information.
+  - `PUT /users/123 HTTP/1.1`
+
+### 4. DELETE
+- **Purpose**: Remove a resource from the server.
+- **Usage**: When deleting a user or a specific data entry.
+- **Characteristics**:
+  - Idempotent.
+  - Can be used to delete a specific resource identified by the URL.
+- **Example**: Deleting a user account.
+  - `DELETE /users/123 HTTP/1.1`
+
+### 5. PATCH
+- **Purpose**: Apply partial modifications to a resource.
+- **Usage**: When updating only specific fields of a resource.
+- **Characteristics**:
+  - Not idempotent by default, but can be designed to be idempotent.
+  - Data is sent in the body of the request, specifying the changes.
+- **Example**: Updating the email address of a user.
+  - `PATCH /users/123 HTTP/1.1`
+
+### 6. HEAD
+- **Purpose**: Retrieve the headers for a resource, without the body.
+- **Usage**: When checking what a GET request will return before actually making the GET request.
+- **Characteristics**:
+  - Used to obtain metadata about the resource.
+  - No response body is returned.
+- **Example**: Checking the last-modified date of a resource.
+  - `HEAD /index.html HTTP/1.1`
+
+### 7. OPTIONS
+- **Purpose**: Describe the communication options for the target resource.
+- **Usage**: Used by clients to determine the capabilities of a server, such as allowed HTTP methods.
+- **Characteristics**:
+  - Returns information about the communication options available.
+  - Can be used to check CORS (Cross-Origin Resource Sharing) permissions.
+- **Example**: Checking which HTTP methods are supported by a server.
+  - `OPTIONS /users HTTP/1.1`
+
+---
+
+# What are different HTTP status codes & why do we use them?
+
+HTTP status codes are issued by a server in response to a client's request made to the server. They are grouped into five categories based on their first digit, and each category conveys a different meaning about the response. Here’s an overview of the different HTTP status codes and why they are used:
+
+## Categories of HTTP Status Codes
+
+### 1. 1xx: Informational
+- **Purpose**: Indicate that the request has been received and understood, and that the process is continuing.
+- **Common Codes**:
+  - **100 Continue**: The client should continue with its request.
+  - **101 Switching Protocols**: The server is switching protocols as requested by the client.
+
+### 2. 2xx: Success
+- **Purpose**: Indicate that the request was successfully received, understood, and accepted.
+- **Common Codes**:
+  - **200 OK**: The request was successful, and the server has returned the requested data.
+  - **201 Created**: The request was successful, and a new resource was created.
+  - **202 Accepted**: The request has been accepted for processing, but the processing is not complete.
+  - **204 No Content**: The request was successful, but there is no content to send in the response.
+
+### 3. 3xx: Redirection
+- **Purpose**: Indicate that further action needs to be taken by the user agent to fulfill the request.
+- **Common Codes**:
+  - **301 Moved Permanently**: The requested resource has been permanently moved to a new URL.
+  - **302 Found**: The requested resource has been temporarily moved to a different URL.
+  - **304 Not Modified**: The resource has not been modified since the last request, so the client can use its cached version.
+
+### 4. 4xx: Client Errors
+- **Purpose**: Indicate that there was a problem with the request made by the client.
+- **Common Codes**:
+  - **400 Bad Request**: The server could not understand the request due to invalid syntax.
+  - **401 Unauthorized**: Authentication is required, and the client must authenticate itself to get the requested response.
+  - **403 Forbidden**: The client does not have access rights to the content, so the server is refusing to give the requested resource.
+  - **404 Not Found**: The server cannot find the requested resource.
+  - **405 Method Not Allowed**: The request method is not supported for the requested resource.
+
+### 5. 5xx: Server Errors
+- **Purpose**: Indicate that the server failed to fulfill a valid request.
+- **Common Codes**:
+  - **500 Internal Server Error**: The server encountered a situation it doesn’t know how to handle.
+  - **501 Not Implemented**: The server does not support the functionality required to fulfill the request.
+  - **502 Bad Gateway**: The server, while acting as a gateway or proxy, received an invalid response from an inbound server.
+  - **503 Service Unavailable**: The server is not ready to handle the request, often due to temporary overloading or maintenance.
+  - **504 Gateway Timeout**: The server, while acting as a gateway or proxy, did not receive a timely response from an upstream server.
+
+## Why We Use HTTP Status Codes
+
+### 1. Communication
+- **Description**: Status codes provide a standardized way for the server to communicate the outcome of a client's request. They inform the client whether the request was successful, if further action is needed, or if an error occurred.
+
+### 2. Debugging and Monitoring
+- **Description**: Status codes help developers and system administrators identify and troubleshoot issues with web applications. For example, a `404 Not Found` error indicates that the requested resource does not exist, while a `500 Internal Server Error` points to a problem on the server side.
+
+### 3. Automation
+- **Description**: Automated systems, such as web crawlers and APIs, rely on status codes to determine how to handle responses. For example, a `301 Moved Permanently` response will prompt a crawler to update its records with the new URL.
+
+### 4. User Experience
+- **Description**: Status codes can be used to provide meaningful error messages to users. For instance, a `401 Unauthorized` response can prompt a user to log in, while a `403 Forbidden` message can inform them of access restrictions.
+
+---
+
+# What are the different ways  of passing information over HTTP?
+
