@@ -299,3 +299,278 @@ HTTP status codes are issued by a server in response to a client's request made 
 
 # What are the different ways  of passing information over HTTP?
 
+There are several ways to pass information over HTTP, depending on the requirements of the application and the type of data being transmitted. Here are the most common methods:
+
+### 1. **Query Parameters**
+   - **Description**: Data is appended to the URL as a query string.
+   - **Example**: `GET /search?query=example`
+   - **Usage**: Ideal for non-sensitive data, pagination, and search parameters.
+   - **Limitations**: Limited length and not suitable for sensitive information.
+
+### 2. **Request Body**
+   - **Description**: Data is included in the body of the HTTP request.
+   - **Types**:
+     - **Form Data**: Commonly used in HTML forms.
+       - **Content-Type**: `application/x-www-form-urlencoded`
+       - **Example**:
+         ```http
+         POST /submit
+         Content-Type: application/x-www-form-urlencoded
+
+         name=John&age=30
+         ```
+     - **Multipart Form Data**: Used for file uploads.
+       - **Content-Type**: `multipart/form-data`
+       - **Example**:
+         ```http
+         POST /upload
+         Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+
+         ------WebKitFormBoundary
+         Content-Disposition: form-data; name="file"; filename="example.txt"
+         Content-Type: text/plain
+
+         (file content)
+         ------WebKitFormBoundary--
+         ```
+     - **JSON**: Commonly used in APIs.
+       - **Content-Type**: `application/json`
+       - **Example**:
+         ```http
+         POST /api/data
+         Content-Type: application/json
+
+         {
+           "name": "John",
+           "age": 30
+         }
+         ```
+     - **XML**: Less common but still used in some APIs.
+       - **Content-Type**: `application/xml`
+       - **Example**:
+         ```http
+         POST /api/data
+         Content-Type: application/xml
+
+         <person>
+           <name>John</name>
+           <age>30</age>
+         </person>
+         ```
+
+### 3. **Headers**
+   - **Description**: Custom headers can be used to pass information.
+   - **Example**:
+     ```http
+     GET /resource
+     Custom-Header: value
+     ```
+   - **Usage**: Often used for authentication tokens, content negotiation, and custom application data.
+
+### 4. **Cookies**
+   - **Description**: Data is stored in cookies and sent with each HTTP request to the server.
+   - **Example**:
+     ```http
+     GET /resource
+     Cookie: sessionId=abc123
+     ```
+   - **Usage**: Session management, user preferences, and tracking.
+
+### 5. **Path Parameters**
+   - **Description**: Data is included as part of the URL path.
+   - **Example**: `GET /users/123`
+   - **Usage**: Used for identifying resources, such as user IDs, product IDs, etc.
+
+### 6. **WebSockets**
+   - **Description**: Provides full-duplex communication channels over a single TCP connection.
+   - **Usage**: Real-time applications such as chat, live updates, and notifications.
+   - **Example**:
+     ```javascript
+     const socket = new WebSocket('ws://example.com/socket');
+     socket.onmessage = function(event) {
+       console.log('Message from server ', event.data);
+     };
+     ```
+
+### 7. **Server-Sent Events (SSE)**
+   - **Description**: Allows servers to push data to web clients over a single HTTP connection.
+   - **Usage**: Real-time updates like news feeds, stock prices, and notifications.
+   - **Example**:
+     ```javascript
+     const eventSource = new EventSource('/events');
+     eventSource.onmessage = function(event) {
+       console.log('New event: ', event.data);
+     };
+     ```
+---
+
+# What is the default status code sent with each response?
+
+##200
+
+---
+
+# What is content-length property in response headers?
+
+The `Content-Length` property in response headers is an HTTP header field that indicates the size of the body of the response, in bytes. This header is important for both the client and the server because it tells the client how much data to expect from the server.
+
+### Key Points About `Content-Length`:
+
+1. **Exact Size**:
+   - The value of `Content-Length` is the exact number of bytes in the body of the response.
+   - For example, if a server sends a response body that is 1234 bytes long, the header will look like this:
+     ```http
+     Content-Length: 1234
+     ```
+
+2. **Usage**:
+   - It helps the client know when the response has been fully received.
+   - It allows clients to allocate the correct amount of memory for the response body.
+   - It enables clients to detect and handle incomplete responses or potential issues during transmission.
+
+3. **Chunked Transfer Encoding**:
+   - When the server uses chunked transfer encoding, the `Content-Length` header is not used. Instead, the response body is sent in chunks, and each chunk is preceded by its size in bytes.
+   - Example of a chunked response:
+     ```http
+     Transfer-Encoding: chunked
+
+     4
+     Wiki
+     5
+     pedia
+     0
+     ```
+
+4. **Examples**:
+   - **Text Response**:
+     ```http
+     HTTP/1.1 200 OK
+     Content-Type: text/plain
+     Content-Length: 13
+
+     Hello, world!
+     ```
+   - **JSON Response**:
+     ```http
+     HTTP/1.1 200 OK
+     Content-Type: application/json
+     Content-Length: 27
+
+     {"name":"John","age":30}
+     ```
+
+5. **Importance for Persistent Connections**:
+   - In HTTP/1.1, persistent connections (or keep-alive connections) allow the same TCP connection to be used for multiple requests/responses.
+   - Knowing the length of the response helps in determining the end of the current response and the beginning of the next one.
+
+### Handling Content-Length:
+
+- **Server-Side**:
+  - The server is responsible for calculating and setting the `Content-Length` header.
+  - In many server frameworks, this is done automatically, but it can also be set manually if needed.
+- **Client-Side**:
+  - The client reads the `Content-Length` header to understand how much data it should read from the connection.
+  - This is crucial for proper handling of the response and for determining if the entire response has been received.
+
+---
+
+# What is  the difference between path and pathname in requested URL?
+
+The terms "path" and "pathname" in the context of a requested URL often refer to similar concepts, but they can have slightly different meanings depending on the context in which they're used. Let's break down each term and their typical usage:
+
+### Path
+- **Definition**: The "path" typically refers to the part of the URL that comes after the domain name and before any query parameters or fragment identifiers.
+- **Example**: In the URL `https://example.com/products/view?id=123#section`, the path is `/products/view`.
+- **Usage**: The path is used by the server to determine which resource is being requested.
+
+### Pathname
+- **Definition**: The "pathname" usually refers to the same part of the URL as the "path" and includes the path but excludes the domain, query parameters, and fragment identifiers. It is a property available in the `Location` interface of the Web API.
+- **Example**: Using the same URL `https://example.com/products/view?id=123#section`, the pathname is also `/products/view`.
+- **Usage**: The pathname is commonly used in client-side scripting (like JavaScript) to retrieve the path part of the current URL.
+
+### Differences in Contexts:
+1. **URL Parsing (General Use)**:
+   - In general URL parsing, "path" and "pathname" are often used interchangeably and refer to the same part of the URL.
+
+2. **Web APIs (JavaScript)**:
+   - In the context of the Web APIs provided by browsers, `pathname` is a property of the `Location` object. For example, `window.location.pathname` gives you the path part of the current URL.
+   - Example:
+     ```javascript
+     console.log(window.location.pathname); // Outputs: /products/view
+     ```
+
+3. **Terminology Consistency**:
+   - While "path" is a broader term that can be used in various contexts (server-side routing, URL structure, etc.), "pathname" is more specific to the Web API context and is a standardized term in the JavaScript `Location` object.
+
+### Summary
+- **Path**: General term used in URLs to refer to the part after the domain and before any query parameters or fragment identifiers. Used broadly in both server-side and client-side contexts.
+- **Pathname**: Specific term often used in client-side JavaScript to refer to the same part of the URL as the path, accessible via `window.location.pathname`.
+
+---
+
+# what is Node.js ?
+
+Node.js is an open-source, cross-platform, JavaScript runtime environment that allows developers to run JavaScript code outside of a web browser. It was created by Ryan Dahl in 2009, and it has become a popular choice for building server-side and networking applications. Here are some key points about Node.js:
+
+### Key Features of Node.js:
+
+1. **Event-Driven and Non-Blocking I/O**:
+   - Node.js uses an event-driven, non-blocking I/O model, making it efficient and suitable for real-time applications. This means it can handle many operations simultaneously without waiting for any single operation to complete.
+
+2. **JavaScript Everywhere**:
+   - With Node.js, developers can use JavaScript for both client-side and server-side scripting, allowing for a more consistent and unified development stack.
+
+3. **Built on V8**:
+   - Node.js is built on Google's V8 JavaScript engine, which compiles JavaScript into native machine code, offering high performance.
+
+4. **NPM (Node Package Manager)**:
+   - Node.js comes with NPM, the largest ecosystem of open-source libraries and modules, making it easy to include and manage dependencies in projects.
+
+5. **Single-Threaded but Highly Scalable**:
+   - Node.js operates on a single-threaded event loop but can handle many concurrent connections efficiently due to its non-blocking I/O operations.
+
+### Common Uses of Node.js:
+
+1. **Web Servers and APIs**:
+   - Node.js is widely used for building web servers and RESTful APIs. Its non-blocking nature allows it to handle multiple requests efficiently.
+
+2. **Real-Time Applications**:
+   - Applications that require real-time communication, such as chat applications, live streaming, and online gaming, benefit from Node.js's event-driven architecture.
+
+3. **Microservices**:
+   - Node.js is often used to develop microservices architectures due to its lightweight and modular nature.
+
+4. **Command-Line Tools**:
+   - Many command-line tools and utilities are built with Node.js because of its fast execution and the vast ecosystem of packages available through NPM.
+
+### Example of a Simple Node.js Server:
+
+```javascript
+// Load the http module to create an HTTP server
+const http = require('http');
+
+// Configure the HTTP server to respond with "Hello World" to all requests
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World\n');
+});
+
+// Listen on port 3000
+const PORT = 3000;
+server.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}/`);
+});
+```
+
+### Popular Frameworks and Libraries for Node.js:
+
+1. **Express.js**: A minimal and flexible Node.js web application framework that provides a robust set of features for building web and mobile applications.
+2. **Koa.js**: Created by the same team behind Express, Koa aims to be a smaller, more expressive, and more robust foundation for web applications and APIs.
+3. **Socket.io**: Enables real-time, bidirectional, and event-based communication between web clients and servers.
+4. **NestJS**: A framework for building efficient, reliable, and scalable server-side applications, heavily inspired by Angular.
+
+---
+
+# explain how Node.js executes asynchrounous I/O operations?
+
