@@ -5,16 +5,19 @@ Web applications can be broadly classified into different types based on their a
 ## Frontend Web Applications
 
 ### 1. Static Websites
+
 - **Description**: Contain fixed content. Each page is coded in HTML and displays the same information to every visitor.
 - **Technologies**: HTML, CSS, JavaScript.
 - **Examples**: Personal blogs, portfolios, documentation sites.
 
 ### 2. Single Page Applications (SPAs)
+
 - **Description**: Load a single HTML page and dynamically update the content as the user interacts with the app. They offer a more seamless and interactive user experience.
 - **Technologies**: Frameworks like React, Angular, Vue.js.
 - **Examples**: Gmail, Google Maps, Trello.
 
 ### 3. Progressive Web Apps (PWAs)
+
 - **Description**: Combine the best of web and mobile apps. They are web apps that use modern web capabilities to deliver an app-like experience to users.
 - **Technologies**: Service Workers, Web App Manifests, frameworks like React, Angular, Vue.js.
 - **Examples**: Twitter Lite, Pinterest, Starbucks.
@@ -22,26 +25,31 @@ Web applications can be broadly classified into different types based on their a
 ## Backend Web Applications
 
 ### 1. Server-Side Rendered (SSR) Applications
+
 - **Description**: The server generates the full HTML for each page request. This can lead to better performance and SEO as the complete page is delivered to the browser.
 - **Technologies**: Node.js (Express), Ruby on Rails, Django, Flask.
 - **Examples**: Traditional websites, content-heavy websites like news sites.
 
 ### 2. RESTful APIs
+
 - **Description**: Provide endpoints for different types of requests (GET, POST, PUT, DELETE) to interact with resources on the server. They are stateless and can be used by multiple clients.
 - **Technologies**: Node.js (Express), Django, Flask, Ruby on Rails.
 - **Examples**: Backend services for mobile apps, SPAs.
 
 ### 3. GraphQL APIs
+
 - **Description**: Allow clients to request exactly the data they need, reducing the amount of data transferred over the network. It provides a more flexible and efficient alternative to REST.
 - **Technologies**: Apollo Server, GraphQL Yoga, Relay.
 - **Examples**: Data-driven applications, complex queries from multiple sources.
 
 ### 4. Microservices
+
 - **Description**: An architectural style that structures an application as a collection of loosely coupled services. Each service is self-contained and should implement a single business capability.
 - **Technologies**: Docker, Kubernetes, Spring Boot, Node.js.
 - **Examples**: Large-scale applications like e-commerce platforms, cloud services.
 
 ### 5. Serverless Applications
+
 - **Description**: Applications where the server management and capacity planning are handled by the cloud provider. The code runs in stateless compute containers that are event-triggered.
 - **Technologies**: AWS Lambda, Google Cloud Functions, Azure Functions.
 - **Examples**: Real-time data processing, chatbots, IoT backend services.
@@ -55,14 +63,17 @@ HTTP, or Hypertext Transfer Protocol, is the foundation of data communication on
 ## What is HTTP?
 
 ### Definition
+
 HTTP is a protocol used for transferring hypertext requests and information on the internet. It is the protocol used by web browsers and servers to communicate.
 
 ### Key Features
+
 1. **Stateless**: Each HTTP request from a client to server is independent; the server does not retain any information about previous requests.
 2. **Request-Response Model**: HTTP operates on a simple request-response cycle. The client sends a request, and the server sends back a response.
 3. **Human-readable**: The protocol is designed to be simple and readable by humans. Requests and responses are structured in a way that can be easily understood.
 
 ### Components of an HTTP Request
+
 1. **Request Line**: Contains the method (e.g., GET, POST), the resource URL, and the HTTP version.
    - Example: `GET /index.html HTTP/1.1`
 2. **Headers**: Provide metadata about the request, such as content type, user agent, and host.
@@ -70,6 +81,7 @@ HTTP is a protocol used for transferring hypertext requests and information on t
 3. **Body**: Contains the data being sent to the server (used mainly in POST and PUT requests).
 
 ### Components of an HTTP Response
+
 1. **Status Line**: Contains the HTTP version, a status code, and a reason phrase.
    - Example: `HTTP/1.1 200 OK`
 2. **Headers**: Provide metadata about the response, such as content type, content length, and server type.
@@ -77,6 +89,7 @@ HTTP is a protocol used for transferring hypertext requests and information on t
 3. **Body**: Contains the data being sent back to the client (e.g., HTML code of a webpage).
 
 ### Common HTTP Methods
+
 1. **GET**: Requests a resource from the server.
 2. **POST**: Sends data to the server to create a new resource.
 3. **PUT**: Sends data to the server to update an existing resource.
@@ -86,6 +99,7 @@ HTTP is a protocol used for transferring hypertext requests and information on t
 7. **PATCH**: Applies partial modifications to a resource.
 
 ### HTTP Status Codes
+
 1. **1xx (Informational)**: Request received, continuing process.
    - Example: `100 Continue`
 2. **2xx (Success)**: The action was successfully received, understood, and accepted.
@@ -100,6 +114,7 @@ HTTP is a protocol used for transferring hypertext requests and information on t
 ---
 
 # Differentiate parts of URL in the given example
+
 `<https://localhost:5000/users/profile?username=mountblue>`
 
 A URL (Uniform Resource Locator) consists of several parts that define the location and method for retrieving resources over the internet. Here’s a breakdown of the different parts of the given URL `https://localhost:5000/users/profile?username=mountblue`:
@@ -107,18 +122,22 @@ A URL (Uniform Resource Locator) consists of several parts that define the locat
 ### Breakdown of the URL
 
 1. **Scheme/Protocol**: `https`
+
    - **Description**: Specifies the protocol used to access the resource. In this case, HTTPS (Hypertext Transfer Protocol Secure) is used, which indicates that the communication is encrypted.
    - **Example**: `https`
 
 2. **Hostname**: `localhost`
+
    - **Description**: Indicates the domain name or IP address of the server where the resource is hosted. `localhost` is a hostname that refers to the local machine.
    - **Example**: `localhost`
 
 3. **Port**: `5000`
+
    - **Description**: Specifies the port number on the server to connect to. If omitted, the default port for the scheme is used (80 for HTTP and 443 for HTTPS).
    - **Example**: `5000`
 
 4. **Path**: `/users/profile`
+
    - **Description**: Specifies the path to the resource on the server. This often represents directories and files on the server.
    - **Example**: `/users/profile`
 
@@ -127,22 +146,26 @@ A URL (Uniform Resource Locator) consists of several parts that define the locat
    - **Example**: `username=mountblue`
 
 ### Full URL Analysis
+
 - **Scheme/Protocol**: `https`
   - This part tells the browser to use the HTTPS protocol for secure communication.
-  
 - **Hostname**: `localhost`
+
   - Indicates that the resource is on the local machine, often used during development and testing.
 
 - **Port**: `5000`
+
   - Specifies that the web server is listening on port 5000. This is often used in development environments where servers run on non-default ports.
 
 - **Path**: `/users/profile`
+
   - The specific endpoint on the server. It generally maps to a route in a web application that handles user profile data.
 
 - **Query String**: `?username=mountblue`
   - Provides additional parameters for the request. Here, it includes a single parameter `username` with the value `mountblue`, which can be used by the server to filter or process the request.
 
 ### Diagram
+
 Here's a visual representation of the URL components:
 
 ```
@@ -168,6 +191,7 @@ HTTP request methods are used to perform various actions on the resources identi
 ## Commonly Used HTTP Request Methods
 
 ### 1. GET
+
 - **Purpose**: Retrieve data from the server.
 - **Usage**: When you want to fetch data without making any changes to it.
 - **Characteristics**:
@@ -179,6 +203,7 @@ HTTP request methods are used to perform various actions on the resources identi
   - `GET /index.html HTTP/1.1`
 
 ### 2. POST
+
 - **Purpose**: Send data to the server to create a new resource.
 - **Usage**: When submitting form data or uploading a file.
 - **Characteristics**:
@@ -190,6 +215,7 @@ HTTP request methods are used to perform various actions on the resources identi
   - `POST /users/register HTTP/1.1`
 
 ### 3. PUT
+
 - **Purpose**: Send data to the server to update an existing resource.
 - **Usage**: When updating user details or modifying data on the server.
 - **Characteristics**:
@@ -199,6 +225,7 @@ HTTP request methods are used to perform various actions on the resources identi
   - `PUT /users/123 HTTP/1.1`
 
 ### 4. DELETE
+
 - **Purpose**: Remove a resource from the server.
 - **Usage**: When deleting a user or a specific data entry.
 - **Characteristics**:
@@ -208,6 +235,7 @@ HTTP request methods are used to perform various actions on the resources identi
   - `DELETE /users/123 HTTP/1.1`
 
 ### 5. PATCH
+
 - **Purpose**: Apply partial modifications to a resource.
 - **Usage**: When updating only specific fields of a resource.
 - **Characteristics**:
@@ -217,6 +245,7 @@ HTTP request methods are used to perform various actions on the resources identi
   - `PATCH /users/123 HTTP/1.1`
 
 ### 6. HEAD
+
 - **Purpose**: Retrieve the headers for a resource, without the body.
 - **Usage**: When checking what a GET request will return before actually making the GET request.
 - **Characteristics**:
@@ -226,6 +255,7 @@ HTTP request methods are used to perform various actions on the resources identi
   - `HEAD /index.html HTTP/1.1`
 
 ### 7. OPTIONS
+
 - **Purpose**: Describe the communication options for the target resource.
 - **Usage**: Used by clients to determine the capabilities of a server, such as allowed HTTP methods.
 - **Characteristics**:
@@ -243,12 +273,14 @@ HTTP status codes are issued by a server in response to a client's request made 
 ## Categories of HTTP Status Codes
 
 ### 1. 1xx: Informational
+
 - **Purpose**: Indicate that the request has been received and understood, and that the process is continuing.
 - **Common Codes**:
   - **100 Continue**: The client should continue with its request.
   - **101 Switching Protocols**: The server is switching protocols as requested by the client.
 
 ### 2. 2xx: Success
+
 - **Purpose**: Indicate that the request was successfully received, understood, and accepted.
 - **Common Codes**:
   - **200 OK**: The request was successful, and the server has returned the requested data.
@@ -257,6 +289,7 @@ HTTP status codes are issued by a server in response to a client's request made 
   - **204 No Content**: The request was successful, but there is no content to send in the response.
 
 ### 3. 3xx: Redirection
+
 - **Purpose**: Indicate that further action needs to be taken by the user agent to fulfill the request.
 - **Common Codes**:
   - **301 Moved Permanently**: The requested resource has been permanently moved to a new URL.
@@ -264,6 +297,7 @@ HTTP status codes are issued by a server in response to a client's request made 
   - **304 Not Modified**: The resource has not been modified since the last request, so the client can use its cached version.
 
 ### 4. 4xx: Client Errors
+
 - **Purpose**: Indicate that there was a problem with the request made by the client.
 - **Common Codes**:
   - **400 Bad Request**: The server could not understand the request due to invalid syntax.
@@ -273,6 +307,7 @@ HTTP status codes are issued by a server in response to a client's request made 
   - **405 Method Not Allowed**: The request method is not supported for the requested resource.
 
 ### 5. 5xx: Server Errors
+
 - **Purpose**: Indicate that the server failed to fulfill a valid request.
 - **Common Codes**:
   - **500 Internal Server Error**: The server encountered a situation it doesn’t know how to handle.
@@ -284,124 +319,148 @@ HTTP status codes are issued by a server in response to a client's request made 
 ## Why We Use HTTP Status Codes
 
 ### 1. Communication
+
 - **Description**: Status codes provide a standardized way for the server to communicate the outcome of a client's request. They inform the client whether the request was successful, if further action is needed, or if an error occurred.
 
 ### 2. Debugging and Monitoring
+
 - **Description**: Status codes help developers and system administrators identify and troubleshoot issues with web applications. For example, a `404 Not Found` error indicates that the requested resource does not exist, while a `500 Internal Server Error` points to a problem on the server side.
 
 ### 3. Automation
+
 - **Description**: Automated systems, such as web crawlers and APIs, rely on status codes to determine how to handle responses. For example, a `301 Moved Permanently` response will prompt a crawler to update its records with the new URL.
 
 ### 4. User Experience
+
 - **Description**: Status codes can be used to provide meaningful error messages to users. For instance, a `401 Unauthorized` response can prompt a user to log in, while a `403 Forbidden` message can inform them of access restrictions.
 
 ---
 
-# What are the different ways  of passing information over HTTP?
+# What are the different ways of passing information over HTTP?
 
 There are several ways to pass information over HTTP, depending on the requirements of the application and the type of data being transmitted. Here are the most common methods:
 
 ### 1. **Query Parameters**
-   - **Description**: Data is appended to the URL as a query string.
-   - **Example**: `GET /search?query=example`
-   - **Usage**: Ideal for non-sensitive data, pagination, and search parameters.
-   - **Limitations**: Limited length and not suitable for sensitive information.
+
+- **Description**: Data is appended to the URL as a query string.
+- **Example**: `GET /search?query=example`
+- **Usage**: Ideal for non-sensitive data, pagination, and search parameters.
+- **Limitations**: Limited length and not suitable for sensitive information.
 
 ### 2. **Request Body**
-   - **Description**: Data is included in the body of the HTTP request.
-   - **Types**:
-     - **Form Data**: Commonly used in HTML forms.
-       - **Content-Type**: `application/x-www-form-urlencoded`
-       - **Example**:
-         ```http
-         POST /submit
-         Content-Type: application/x-www-form-urlencoded
 
-         name=John&age=30
-         ```
-     - **Multipart Form Data**: Used for file uploads.
-       - **Content-Type**: `multipart/form-data`
-       - **Example**:
-         ```http
-         POST /upload
-         Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+- **Description**: Data is included in the body of the HTTP request.
+- **Types**:
 
-         ------WebKitFormBoundary
-         Content-Disposition: form-data; name="file"; filename="example.txt"
-         Content-Type: text/plain
+  - **Form Data**: Commonly used in HTML forms.
 
-         (file content)
-         ------WebKitFormBoundary--
-         ```
-     - **JSON**: Commonly used in APIs.
-       - **Content-Type**: `application/json`
-       - **Example**:
-         ```http
-         POST /api/data
-         Content-Type: application/json
+    - **Content-Type**: `application/x-www-form-urlencoded`
+    - **Example**:
 
-         {
-           "name": "John",
-           "age": 30
-         }
-         ```
-     - **XML**: Less common but still used in some APIs.
-       - **Content-Type**: `application/xml`
-       - **Example**:
-         ```http
-         POST /api/data
-         Content-Type: application/xml
+      ```http
+      POST /submit
+      Content-Type: application/x-www-form-urlencoded
 
-         <person>
-           <name>John</name>
-           <age>30</age>
-         </person>
-         ```
+      name=John&age=30
+      ```
+
+  - **Multipart Form Data**: Used for file uploads.
+
+    - **Content-Type**: `multipart/form-data`
+    - **Example**:
+
+      ```http
+      POST /upload
+      Content-Type: multipart/form-data; boundary=----WebKitFormBoundary
+
+      ------WebKitFormBoundary
+      Content-Disposition: form-data; name="file"; filename="example.txt"
+      Content-Type: text/plain
+
+      (file content)
+      ------WebKitFormBoundary--
+      ```
+
+  - **JSON**: Commonly used in APIs.
+
+    - **Content-Type**: `application/json`
+    - **Example**:
+
+      ```http
+      POST /api/data
+      Content-Type: application/json
+
+      {
+        "name": "John",
+        "age": 30
+      }
+      ```
+
+  - **XML**: Less common but still used in some APIs.
+
+    - **Content-Type**: `application/xml`
+    - **Example**:
+
+      ```http
+      POST /api/data
+      Content-Type: application/xml
+
+      <person>
+        <name>John</name>
+        <age>30</age>
+      </person>
+      ```
 
 ### 3. **Headers**
-   - **Description**: Custom headers can be used to pass information.
-   - **Example**:
-     ```http
-     GET /resource
-     Custom-Header: value
-     ```
-   - **Usage**: Often used for authentication tokens, content negotiation, and custom application data.
+
+- **Description**: Custom headers can be used to pass information.
+- **Example**:
+  ```http
+  GET /resource
+  Custom-Header: value
+  ```
+- **Usage**: Often used for authentication tokens, content negotiation, and custom application data.
 
 ### 4. **Cookies**
-   - **Description**: Data is stored in cookies and sent with each HTTP request to the server.
-   - **Example**:
-     ```http
-     GET /resource
-     Cookie: sessionId=abc123
-     ```
-   - **Usage**: Session management, user preferences, and tracking.
+
+- **Description**: Data is stored in cookies and sent with each HTTP request to the server.
+- **Example**:
+  ```http
+  GET /resource
+  Cookie: sessionId=abc123
+  ```
+- **Usage**: Session management, user preferences, and tracking.
 
 ### 5. **Path Parameters**
-   - **Description**: Data is included as part of the URL path.
-   - **Example**: `GET /users/123`
-   - **Usage**: Used for identifying resources, such as user IDs, product IDs, etc.
+
+- **Description**: Data is included as part of the URL path.
+- **Example**: `GET /users/123`
+- **Usage**: Used for identifying resources, such as user IDs, product IDs, etc.
 
 ### 6. **WebSockets**
-   - **Description**: Provides full-duplex communication channels over a single TCP connection.
-   - **Usage**: Real-time applications such as chat, live updates, and notifications.
-   - **Example**:
-     ```javascript
-     const socket = new WebSocket('ws://example.com/socket');
-     socket.onmessage = function(event) {
-       console.log('Message from server ', event.data);
-     };
-     ```
+
+- **Description**: Provides full-duplex communication channels over a single TCP connection.
+- **Usage**: Real-time applications such as chat, live updates, and notifications.
+- **Example**:
+  ```javascript
+  const socket = new WebSocket("ws://example.com/socket");
+  socket.onmessage = function (event) {
+    console.log("Message from server ", event.data);
+  };
+  ```
 
 ### 7. **Server-Sent Events (SSE)**
-   - **Description**: Allows servers to push data to web clients over a single HTTP connection.
-   - **Usage**: Real-time updates like news feeds, stock prices, and notifications.
-   - **Example**:
-     ```javascript
-     const eventSource = new EventSource('/events');
-     eventSource.onmessage = function(event) {
-       console.log('New event: ', event.data);
-     };
-     ```
+
+- **Description**: Allows servers to push data to web clients over a single HTTP connection.
+- **Usage**: Real-time updates like news feeds, stock prices, and notifications.
+- **Example**:
+  ```javascript
+  const eventSource = new EventSource("/events");
+  eventSource.onmessage = function (event) {
+    console.log("New event: ", event.data);
+  };
+  ```
+
 ---
 
 # What is the default status code sent with each response?
@@ -417,6 +476,7 @@ The `Content-Length` property in response headers is an HTTP header field that i
 ### Key Points About `Content-Length`:
 
 1. **Exact Size**:
+
    - The value of `Content-Length` is the exact number of bytes in the body of the response.
    - For example, if a server sends a response body that is 1234 bytes long, the header will look like this:
      ```http
@@ -424,13 +484,16 @@ The `Content-Length` property in response headers is an HTTP header field that i
      ```
 
 2. **Usage**:
+
    - It helps the client know when the response has been fully received.
    - It allows clients to allocate the correct amount of memory for the response body.
    - It enables clients to detect and handle incomplete responses or potential issues during transmission.
 
 3. **Chunked Transfer Encoding**:
+
    - When the server uses chunked transfer encoding, the `Content-Length` header is not used. Instead, the response body is sent in chunks, and each chunk is preceded by its size in bytes.
    - Example of a chunked response:
+
      ```http
      Transfer-Encoding: chunked
 
@@ -442,7 +505,9 @@ The `Content-Length` property in response headers is an HTTP header field that i
      ```
 
 4. **Examples**:
+
    - **Text Response**:
+
      ```http
      HTTP/1.1 200 OK
      Content-Type: text/plain
@@ -450,7 +515,9 @@ The `Content-Length` property in response headers is an HTTP header field that i
 
      Hello, world!
      ```
+
    - **JSON Response**:
+
      ```http
      HTTP/1.1 200 OK
      Content-Type: application/json
@@ -474,25 +541,30 @@ The `Content-Length` property in response headers is an HTTP header field that i
 
 ---
 
-# What is  the difference between path and pathname in requested URL?
+# What is the difference between path and pathname in requested URL?
 
 The terms "path" and "pathname" in the context of a requested URL often refer to similar concepts, but they can have slightly different meanings depending on the context in which they're used. Let's break down each term and their typical usage:
 
 ### Path
+
 - **Definition**: The "path" typically refers to the part of the URL that comes after the domain name and before any query parameters or fragment identifiers.
 - **Example**: In the URL `https://example.com/products/view?id=123#section`, the path is `/products/view`.
 - **Usage**: The path is used by the server to determine which resource is being requested.
 
 ### Pathname
+
 - **Definition**: The "pathname" usually refers to the same part of the URL as the "path" and includes the path but excludes the domain, query parameters, and fragment identifiers. It is a property available in the `Location` interface of the Web API.
 - **Example**: Using the same URL `https://example.com/products/view?id=123#section`, the pathname is also `/products/view`.
 - **Usage**: The pathname is commonly used in client-side scripting (like JavaScript) to retrieve the path part of the current URL.
 
 ### Differences in Contexts:
+
 1. **URL Parsing (General Use)**:
+
    - In general URL parsing, "path" and "pathname" are often used interchangeably and refer to the same part of the URL.
 
 2. **Web APIs (JavaScript)**:
+
    - In the context of the Web APIs provided by browsers, `pathname` is a property of the `Location` object. For example, `window.location.pathname` gives you the path part of the current URL.
    - Example:
      ```javascript
@@ -503,6 +575,7 @@ The terms "path" and "pathname" in the context of a requested URL often refer to
    - While "path" is a broader term that can be used in various contexts (server-side routing, URL structure, etc.), "pathname" is more specific to the Web API context and is a standardized term in the JavaScript `Location` object.
 
 ### Summary
+
 - **Path**: General term used in URLs to refer to the part after the domain and before any query parameters or fragment identifiers. Used broadly in both server-side and client-side contexts.
 - **Pathname**: Specific term often used in client-side JavaScript to refer to the same part of the URL as the path, accessible via `window.location.pathname`.
 
@@ -515,15 +588,19 @@ Node.js is an open-source, cross-platform, JavaScript runtime environment that a
 ### Key Features of Node.js:
 
 1. **Event-Driven and Non-Blocking I/O**:
+
    - Node.js uses an event-driven, non-blocking I/O model, making it efficient and suitable for real-time applications. This means it can handle many operations simultaneously without waiting for any single operation to complete.
 
 2. **JavaScript Everywhere**:
+
    - With Node.js, developers can use JavaScript for both client-side and server-side scripting, allowing for a more consistent and unified development stack.
 
 3. **Built on V8**:
+
    - Node.js is built on Google's V8 JavaScript engine, which compiles JavaScript into native machine code, offering high performance.
 
 4. **NPM (Node Package Manager)**:
+
    - Node.js comes with NPM, the largest ecosystem of open-source libraries and modules, making it easy to include and manage dependencies in projects.
 
 5. **Single-Threaded but Highly Scalable**:
@@ -532,12 +609,15 @@ Node.js is an open-source, cross-platform, JavaScript runtime environment that a
 ### Common Uses of Node.js:
 
 1. **Web Servers and APIs**:
+
    - Node.js is widely used for building web servers and RESTful APIs. Its non-blocking nature allows it to handle multiple requests efficiently.
 
 2. **Real-Time Applications**:
+
    - Applications that require real-time communication, such as chat applications, live streaming, and online gaming, benefit from Node.js's event-driven architecture.
 
 3. **Microservices**:
+
    - Node.js is often used to develop microservices architectures due to its lightweight and modular nature.
 
 4. **Command-Line Tools**:
@@ -547,13 +627,13 @@ Node.js is an open-source, cross-platform, JavaScript runtime environment that a
 
 ```javascript
 // Load the http module to create an HTTP server
-const http = require('http');
+const http = require("http");
 
 // Configure the HTTP server to respond with "Hello World" to all requests
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello World\n');
+  res.setHeader("Content-Type", "text/plain");
+  res.end("Hello World\n");
 });
 
 // Listen on port 3000
@@ -577,110 +657,123 @@ server.listen(PORT, () => {
 Node.js comes with a set of core modules that provide essential functionalities to build applications without the need to install external dependencies. These core modules are efficient, well-tested, and maintained by the Node.js core team. Here is an overview of some commonly used core modules in the Node.js environment:
 
 ### 1. **fs (File System)**
+
 The `fs` module provides an API to interact with the file system. It includes methods for reading, writing, and manipulating files and directories.
 
 Example:
+
 ```javascript
-const fs = require('fs');
+const fs = require("fs");
 
 // Read a file asynchronously
-fs.readFile('example.txt', 'utf8', (err, data) => {
+fs.readFile("example.txt", "utf8", (err, data) => {
   if (err) {
-    console.error('Error reading file:', err);
+    console.error("Error reading file:", err);
     return;
   }
-  console.log('File contents:', data);
+  console.log("File contents:", data);
 });
 ```
 
 ### 2. **http**
+
 The `http` module allows the creation of HTTP servers and clients. It is used to handle HTTP requests and responses.
 
 Example:
+
 ```javascript
-const http = require('http');
+const http = require("http");
 
 // Create an HTTP server
 const server = http.createServer((req, res) => {
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hello, World!\n');
+  res.setHeader("Content-Type", "text/plain");
+  res.end("Hello, World!\n");
 });
 
 // Listen on port 3000
 server.listen(3000, () => {
-  console.log('Server running at http://localhost:3000/');
+  console.log("Server running at http://localhost:3000/");
 });
 ```
 
 ### 3. **path**
+
 The `path` module provides utilities for working with file and directory paths. It is useful for resolving and normalizing file paths.
 
 Example:
+
 ```javascript
-const path = require('path');
+const path = require("path");
 
 // Join paths
-const filePath = path.join(__dirname, 'example.txt');
+const filePath = path.join(__dirname, "example.txt");
 console.log(filePath); // Output: /path/to/current/directory/example.txt
 ```
 
 ### 4. **os**
+
 The `os` module provides information about the operating system, such as the platform, CPU architecture, and network interfaces.
 
 Example:
+
 ```javascript
-const os = require('os');
+const os = require("os");
 
 // Get the operating system platform
-console.log('Platform:', os.platform());
+console.log("Platform:", os.platform());
 
 // Get the total system memory
-console.log('Total Memory:', os.totalmem());
+console.log("Total Memory:", os.totalmem());
 ```
 
 ### 5. **events**
+
 The `events` module provides a way to create and handle custom events. It includes the `EventEmitter` class for working with events.
 
 Example:
+
 ```javascript
-const EventEmitter = require('events');
+const EventEmitter = require("events");
 
 // Create an instance of EventEmitter
 const emitter = new EventEmitter();
 
 // Register an event listener
-emitter.on('greet', () => {
-  console.log('Hello, World!');
+emitter.on("greet", () => {
+  console.log("Hello, World!");
 });
 
 // Emit the event
-emitter.emit('greet');
+emitter.emit("greet");
 ```
 
-
 ### 9. **url**
+
 The `url` module provides utilities for URL resolution and parsing.
 
 Example:
+
 ```javascript
-const url = require('url');
+const url = require("url");
 
 // Parse a URL
-const parsedUrl = url.parse('http://www.example.com/path?name=Node.js');
+const parsedUrl = url.parse("http://www.example.com/path?name=Node.js");
 console.log(parsedUrl.hostname); // Output: www.example.com
 console.log(parsedUrl.query); // Output: name=Node.js
 ```
 
 ### 10. **querystring**
+
 The `querystring` module provides utilities for parsing and formatting URL query strings.
 
 Example:
+
 ```javascript
-const querystring = require('querystring');
+const querystring = require("querystring");
 
 // Parse a query string
-const parsed = querystring.parse('name=Node.js&year=2023');
+const parsed = querystring.parse("name=Node.js&year=2023");
 console.log(parsed.name); // Output: Node.js
 console.log(parsed.year); // Output: 2023
 ```
@@ -696,7 +789,7 @@ Creating a server in Node.js is straightforward, thanks to its built-in `http` m
 Start by requiring the `http` module:
 
 ```javascript
-const http = require('http');
+const http = require("http");
 ```
 
 ### Step 2: Create an HTTP Server
@@ -707,10 +800,10 @@ Use the `http.createServer()` method to create a server instance. This method ta
 const server = http.createServer((req, res) => {
   // Set the response status code and headers
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
+  res.setHeader("Content-Type", "text/plain");
 
   // Send the response body
-  res.end('Hello, World!\n');
+  res.end("Hello, World!\n");
 });
 ```
 
@@ -720,7 +813,7 @@ Use the `server.listen()` method to start the server, specifying the port and ho
 
 ```javascript
 const port = 3000;
-const hostname = '127.0.0.1';
+const hostname = "127.0.0.1";
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
@@ -732,26 +825,27 @@ server.listen(port, hostname, () => {
 Putting it all together, here’s the complete code for a basic Node.js server:
 
 ```javascript
-const http = require('http');
+const http = require("http");
 
 // Create an HTTP server
 const server = http.createServer((req, res) => {
   // Set the response status code and headers
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
+  res.setHeader("Content-Type", "text/plain");
 
   // Send the response body
-  res.end('Hello, World!\n');
+  res.end("Hello, World!\n");
 });
 
 // Start the server
 const port = 3000;
-const hostname = '127.0.0.1';
+const hostname = "127.0.0.1";
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
 ```
+
 ---
 
 # the name of the core node module which is used to parse requested URL over HTTP?
@@ -763,8 +857,8 @@ The core Node.js module used to parse requested URLs over HTTP is the `url` modu
 Here's an example demonstrating how to use the `url` module to parse a requested URL in an HTTP server:
 
 ```javascript
-const http = require('http');
-const url = require('url');
+const http = require("http");
+const url = require("url");
 
 const server = http.createServer((req, res) => {
   // Parse the requested URL
@@ -775,17 +869,17 @@ const server = http.createServer((req, res) => {
   const query = parsedUrl.query;
 
   // Log the pathname and query parameters
-  console.log('Pathname:', pathname);
-  console.log('Query Parameters:', query);
+  console.log("Pathname:", pathname);
+  console.log("Query Parameters:", query);
 
   // Send a response
   res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('URL parsed successfully\n');
+  res.setHeader("Content-Type", "text/plain");
+  res.end("URL parsed successfully\n");
 });
 
 const port = 3000;
-const hostname = '127.0.0.1';
+const hostname = "127.0.0.1";
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
@@ -793,6 +887,7 @@ server.listen(port, hostname, () => {
 ```
 
 In this example:
+
 1. The `http` module is used to create an HTTP server.
 2. The `url` module is used to parse the requested URL.
 3. The `url.parse()` method parses the URL, and the second argument `true` indicates that the query string should be parsed into an object.
@@ -816,15 +911,19 @@ Yes, I can explain that! **NPM** stands for **Node Package Manager**. It is the 
 ### Why Use NPM?
 
 1. **Dependency Management**:
+
    - NPM simplifies the process of installing and managing libraries and dependencies. When you use external libraries, NPM ensures they are downloaded and available for use in your project.
 
 2. **Package Management**:
+
    - It allows you to publish your own packages so others can use them. You can also install packages published by others to utilize their functionality.
 
 3. **Version Control**:
+
    - NPM handles versioning of packages, making it easy to specify and manage versions of dependencies in your project. You can also easily update or revert to previous versions.
 
 4. **Scripts and Automation**:
+
    - NPM supports running scripts defined in the `package.json` file. This is useful for automating tasks like testing, building, and deploying applications.
 
 5. **Community and Ecosystem**:
@@ -835,39 +934,51 @@ Yes, I can explain that! **NPM** stands for **Node Package Manager**. It is the 
 Here are some fundamental NPM commands:
 
 - **Initialize a Project**:
+
   ```bash
   npm init
   ```
+
   This command creates a `package.json` file, which manages your project’s dependencies and scripts.
 
 - **Install a Package**:
+
   ```bash
   npm install <package-name>
   ```
+
   Installs a package and adds it to the `dependencies` section of `package.json`.
 
 - **Install a Development Dependency**:
+
   ```bash
   npm install <package-name> --save-dev
   ```
+
   Installs a package as a development dependency, typically for testing or building.
 
 - **Install All Dependencies**:
+
   ```bash
   npm install
   ```
+
   Installs all the dependencies listed in the `package.json` file.
 
 - **Run a Script**:
+
   ```bash
   npm run <script-name>
   ```
+
   Runs a script defined in the `scripts` section of `package.json`.
 
 - **Publish a Package**:
+
   ```bash
   npm publish
   ```
+
   Publishes your package to the NPM registry.
 
 - **Update Packages**:
@@ -879,6 +990,7 @@ Here are some fundamental NPM commands:
 ### Example Usage
 
 1. **Creating a New Project**:
+
    ```bash
    mkdir my-new-project
    cd my-new-project
@@ -886,17 +998,20 @@ Here are some fundamental NPM commands:
    ```
 
 2. **Installing Express**:
+
    ```bash
    npm install express
    ```
 
 3. **Running a Script**:
+
    ```json
    // In package.json
    "scripts": {
      "start": "node app.js"
    }
    ```
+
    ```bash
    npm run start
    ```
@@ -918,6 +1033,7 @@ The `package.json` file is a fundamental component in Node.js projects. It serve
 The `package.json` file contains essential information about your project, such as:
 
 - **Name and Version**: Identifies your project and its version.
+
   ```json
   {
     "name": "my-project",
@@ -926,6 +1042,7 @@ The `package.json` file contains essential information about your project, such 
   ```
 
 - **Description**: Provides a brief description of the project.
+
   ```json
   {
     "description": "A sample Node.js project"
@@ -945,6 +1062,7 @@ The `package.json` file contains essential information about your project, such 
 The `package.json` file lists all the dependencies your project needs to run. Dependencies are categorized into:
 
 - **Dependencies**: Packages required for running the application.
+
   ```json
   {
     "dependencies": {
@@ -967,6 +1085,7 @@ The `package.json` file lists all the dependencies your project needs to run. De
 You can define scripts in the `package.json` file to automate tasks like testing, building, and starting the application. These scripts are run using `npm run <script-name>`.
 
 Example:
+
 ```json
 {
   "scripts": {
@@ -975,6 +1094,7 @@ Example:
   }
 }
 ```
+
 Running `npm start` will execute `node app.js`, and `npm test` will run the tests using Mocha.
 
 ### 4. **Version Management**
@@ -990,6 +1110,7 @@ The `package.json` file helps manage package versions, ensuring that the correct
 Many packages use the `package.json` file to configure their settings. For example, Babel, Webpack, and ESLint can be configured through the `package.json`.
 
 Example with Babel:
+
 ```json
 {
   "babel": {
@@ -1003,6 +1124,7 @@ Example with Babel:
 NPM scripts in `package.json` can define lifecycle hooks for different stages of the project, such as `preinstall`, `postinstall`, `prestart`, and `poststart`.
 
 Example:
+
 ```json
 {
   "scripts": {
@@ -1016,12 +1138,15 @@ Example:
 ### 7. **Dependencies Management Commands**
 
 - **Installing Dependencies**:
+
   ```bash
   npm install
   ```
+
   Installs dependencies listed in `package.json`.
 
 - **Adding Dependencies**:
+
   ```bash
   npm install <package-name>
   npm install <package-name> --save-dev
@@ -1067,22 +1192,24 @@ Here’s a complete example of a `package.json` file:
 1. **Routing**: Express makes it easy to define routes for handling different HTTP methods and URLs. Routes are the endpoints in your application where requests are processed.
 
    Example:
+
    ```javascript
-   const express = require('express');
+   const express = require("express");
    const app = express();
 
-   app.get('/', (req, res) => {
-     res.send('Hello, World!');
+   app.get("/", (req, res) => {
+     res.send("Hello, World!");
    });
 
    app.listen(3000, () => {
-     console.log('Server running on port 3000');
+     console.log("Server running on port 3000");
    });
    ```
 
 2. **Middleware**: Express uses middleware functions to handle requests. Middleware functions have access to the request object (`req`), the response object (`res`), and the next middleware function in the stack. This allows you to perform tasks like logging, authentication, and parsing request bodies.
 
    Example of middleware:
+
    ```javascript
    app.use((req, res, next) => {
      console.log(`${req.method} request for ${req.url}`);
@@ -1093,27 +1220,30 @@ Here’s a complete example of a `package.json` file:
 3. **Template Engine Support**: Express supports various template engines, allowing you to generate HTML dynamically. Common template engines include Pug, EJS, and Handlebars.
 
    Example with Pug:
+
    ```javascript
-   app.set('view engine', 'pug');
-   app.get('/', (req, res) => {
-     res.render('index', { title: 'Home', message: 'Welcome to Express!' });
+   app.set("view engine", "pug");
+   app.get("/", (req, res) => {
+     res.render("index", { title: "Home", message: "Welcome to Express!" });
    });
    ```
 
 4. **Static File Serving**: Express can serve static files (like HTML, CSS, and JavaScript) from a directory. This is useful for serving front-end assets.
 
    Example:
+
    ```javascript
-   app.use(express.static('public'));
+   app.use(express.static("public"));
    ```
 
 5. **Error Handling**: Express provides a mechanism for centralized error handling, making it easier to handle and respond to errors in a consistent manner.
 
    Example:
+
    ```javascript
    app.use((err, req, res, next) => {
      console.error(err.stack);
-     res.status(500).send('Something went wrong!');
+     res.status(500).send("Something went wrong!");
    });
    ```
 
@@ -1122,7 +1252,7 @@ Here’s a complete example of a `package.json` file:
 Here’s a simple example of an Express application:
 
 ```javascript
-const express = require('express');
+const express = require("express");
 const app = express();
 const port = 3000;
 
@@ -1130,14 +1260,14 @@ const port = 3000;
 app.use(express.json());
 
 // Route to handle GET requests to the root URL
-app.get('/', (req, res) => {
-  res.send('Hello, Express!');
+app.get("/", (req, res) => {
+  res.send("Hello, Express!");
 });
 
 // Route to handle POST requests to /data
-app.post('/data', (req, res) => {
+app.post("/data", (req, res) => {
   const data = req.body;
-  res.json({ message: 'Data received', data });
+  res.json({ message: "Data received", data });
 });
 
 // Start the server
@@ -1161,7 +1291,7 @@ npm install express
 - **Performance**: Express is designed to be lightweight and performant, allowing you to build high-speed applications.
 - **Community and Ecosystem**: Being one of the most popular Node.js frameworks, Express has a large community and a rich ecosystem of plugins and tools.
 
---- 
+---
 
 # How to create a server using express?
 
@@ -1188,8 +1318,9 @@ In Express applications, middleware functions are functions that have access to 
 1. **Application-Level Middleware**: Defined using `app.use()` or `app.METHOD()`. These middleware functions are applied to all routes.
 
    Example:
+
    ```javascript
-   const express = require('express');
+   const express = require("express");
    const app = express();
 
    // Application-level middleware
@@ -1202,28 +1333,31 @@ In Express applications, middleware functions are functions that have access to 
 2. **Router-Level Middleware**: Defined using `router.use()` or `router.METHOD()`. These middleware functions are applied to specific routes or groups of routes.
 
    Example:
+
    ```javascript
    const router = express.Router();
 
    router.use((req, res, next) => {
-     console.log('Router-level middleware');
+     console.log("Router-level middleware");
      next();
    });
 
-   router.get('/route', (req, res) => {
-     res.send('Hello from router');
+   router.get("/route", (req, res) => {
+     res.send("Hello from router");
    });
    ```
 
 3. **Third-Party Middleware**: Middleware provided by third-party libraries. Common third-party middleware includes `body-parser`, `cors`, `morgan`, `helmet`, etc.
 
    Example using `body-parser`:
+
    ```bash
    npm install body-parser
    ```
+
    ```javascript
-   const express = require('express');
-   const bodyParser = require('body-parser');
+   const express = require("express");
+   const bodyParser = require("body-parser");
    const app = express();
 
    app.use(bodyParser.json()); // for parsing application/json
@@ -1233,10 +1367,11 @@ In Express applications, middleware functions are functions that have access to 
 4. **Error-Handling Middleware**: Defined with four arguments (`err`, `req`, `res`, `next`) to handle errors. Error-handling middleware is defined after all other middleware.
 
    Example:
+
    ```javascript
    app.use((err, req, res, next) => {
      console.error(err.stack);
-     res.status(500).send('Something went wrong!');
+     res.status(500).send("Something went wrong!");
    });
    ```
 
@@ -1245,7 +1380,7 @@ In Express applications, middleware functions are functions that have access to 
 Here’s a simple example demonstrating different types of middleware:
 
 ```javascript
-const express = require('express');
+const express = require("express");
 const app = express();
 const port = 3000;
 
@@ -1262,20 +1397,20 @@ router.use((req, res, next) => {
   next();
 });
 
-router.get('/', (req, res) => {
-  res.send('Hello from the home route');
+router.get("/", (req, res) => {
+  res.send("Hello from the home route");
 });
 
-router.get('/about', (req, res) => {
-  res.send('About us');
+router.get("/about", (req, res) => {
+  res.send("About us");
 });
 
-app.use('/about', router);
+app.use("/about", router);
 
 // Error-handling middleware
 app.use((err, req, res, next) => {
   console.error(err.stack);
-  res.status(500).send('Something broke!');
+  res.status(500).send("Something broke!");
 });
 
 app.listen(port, () => {
@@ -1298,6 +1433,7 @@ app.listen(port, () => {
 Express provides several built-in middleware functions that you can use to simplify common tasks in your applications. Here are some of the most commonly used built-in middlewares in Express:
 
 ### 1. **express.json()**
+
 Parses incoming requests with JSON payloads.
 
 ```javascript
@@ -1305,6 +1441,7 @@ app.use(express.json());
 ```
 
 ### 2. **express.urlencoded()**
+
 Parses incoming requests with URL-encoded payloads. It is commonly used for form submissions.
 
 ```javascript
@@ -1312,24 +1449,27 @@ app.use(express.urlencoded({ extended: true }));
 ```
 
 ### 3. **express.static()**
+
 Serves static files from a directory. This is useful for serving HTML, CSS, JavaScript, and image files.
 
 ```javascript
-app.use(express.static('public'));
+app.use(express.static("public"));
 ```
 
 ### 4. **express.Router()**
+
 Creates a new router object. It is used to modularize routes, allowing you to organize your routes into smaller, manageable modules.
 
 ```javascript
 const router = express.Router();
-router.get('/', (req, res) => {
-  res.send('Hello, Router!');
+router.get("/", (req, res) => {
+  res.send("Hello, Router!");
 });
-app.use('/router', router);
+app.use("/router", router);
 ```
 
 ### 5. **express.urlencoded()**
+
 Parses URL-encoded data with the querystring library. It is similar to `express.json()` but for URL-encoded data.
 
 ```javascript
@@ -1337,6 +1477,7 @@ app.use(express.urlencoded({ extended: true }));
 ```
 
 ### 6. **express.raw()**
+
 Parses incoming requests with raw payloads. It is used for handling binary data.
 
 ```javascript
@@ -1344,6 +1485,7 @@ app.use(express.raw());
 ```
 
 ### 7. **express.text()**
+
 Parses incoming requests with text payloads. It is used for handling plain text data.
 
 ```javascript
@@ -1351,6 +1493,7 @@ app.use(express.text());
 ```
 
 ### 8. **express.json()**
+
 Parses incoming requests with JSON payloads. It is used for handling JSON data.
 
 ```javascript
@@ -1358,50 +1501,59 @@ app.use(express.json());
 ```
 
 ### 9. **morgan**
+
 A HTTP request logger middleware for node.js. It is used to log requests and responses for debugging and monitoring purposes.
 
 ```bash
 npm install morgan
 ```
+
 ```javascript
-const morgan = require('morgan');
-app.use(morgan('dev'));
+const morgan = require("morgan");
+app.use(morgan("dev"));
 ```
 
 ### 10. **helmet**
+
 A collection of middleware to help secure your Express application by setting various HTTP headers.
 
 ```bash
 npm install helmet
 ```
+
 ```javascript
-const helmet = require('helmet');
+const helmet = require("helmet");
 app.use(helmet());
 ```
 
 ### 11. **cors**
+
 Enables Cross-Origin Resource Sharing (CORS) for your application. This middleware allows you to specify who can access your resources.
 
 ```bash
 npm install cors
 ```
+
 ```javascript
-const cors = require('cors');
+const cors = require("cors");
 app.use(cors());
 ```
 
 ### 12. **cookieParser**
+
 Parses cookies attached to the client request. This is useful for handling cookies in your application.
 
 ```bash
 npm install cookie-parser
 ```
+
 ```javascript
-const cookieParser = require('cookie-parser');
+const cookieParser = require("cookie-parser");
 app.use(cookieParser());
 ```
 
 ### 13. **express.urlencoded()**
+
 Parses URL-encoded data with the querystring library. It is commonly used for handling form submissions.
 
 ```javascript
@@ -1413,30 +1565,30 @@ app.use(express.urlencoded({ extended: true }));
 Here’s an example demonstrating the use of some built-in middlewares:
 
 ```javascript
-const express = require('express');
-const morgan = require('morgan');
-const helmet = require('helmet');
-const cors = require('cors');
-const cookieParser = require('cookie-parser');
+const express = require("express");
+const morgan = require("morgan");
+const helmet = require("helmet");
+const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 const port = 3000;
 
 // Middleware setup
-app.use(morgan('dev'));             // HTTP request logger
-app.use(helmet());                  // Security middleware
-app.use(cors());                    // Enable CORS
-app.use(express.json());            // Parse JSON bodies
+app.use(morgan("dev")); // HTTP request logger
+app.use(helmet()); // Security middleware
+app.use(cors()); // Enable CORS
+app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
-app.use(cookieParser());            // Parse cookies
+app.use(cookieParser()); // Parse cookies
 
 // Routes
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
 });
 
-app.post('/data', (req, res) => {
-  res.json({ message: 'Data received', data: req.body });
+app.post("/data", (req, res) => {
+  res.json({ message: "Data received", data: req.body });
 });
 
 app.listen(port, () => {
@@ -1455,12 +1607,12 @@ Here's an overview of how the `next()` function is used in middleware:
 ### Basic Example
 
 ```javascript
-const express = require('express');
+const express = require("express");
 const app = express();
 
 // Middleware function
 const myMiddleware = (req, res, next) => {
-  console.log('Middleware function executed');
+  console.log("Middleware function executed");
   next(); // Pass control to the next middleware function
 };
 
@@ -1468,12 +1620,12 @@ const myMiddleware = (req, res, next) => {
 app.use(myMiddleware);
 
 // Route handler
-app.get('/', (req, res) => {
-  res.send('Hello, World!');
+app.get("/", (req, res) => {
+  res.send("Hello, World!");
 });
 
 app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+  console.log("Server is running on port 3000");
 });
 ```
 
@@ -1496,15 +1648,15 @@ In this example:
      if (req.headers.authorization) {
        next();
      } else {
-       res.status(401).send('Unauthorized');
+       res.status(401).send("Unauthorized");
      }
    };
 
    app.use(logger);
    app.use(authenticate);
 
-   app.get('/', (req, res) => {
-     res.send('Hello, authenticated user!');
+   app.get("/", (req, res) => {
+     res.send("Hello, authenticated user!");
    });
    ```
 
@@ -1515,11 +1667,11 @@ In this example:
    ```javascript
    const errorHandler = (err, req, res, next) => {
      console.error(err.stack);
-     res.status(500).send('Something broke!');
+     res.status(500).send("Something broke!");
    };
 
    app.use((req, res, next) => {
-     next(new Error('Oops!')); // Pass an error to the next middleware
+     next(new Error("Oops!")); // Pass an error to the next middleware
    });
 
    app.use(errorHandler); // Error-handling middleware
@@ -1531,11 +1683,11 @@ In this example:
 
    ```javascript
    app.use((req, res, next) => {
-     req.customProperty = 'Custom Value';
+     req.customProperty = "Custom Value";
      next();
    });
 
-   app.get('/', (req, res) => {
+   app.get("/", (req, res) => {
      res.send(`Custom Property: ${req.customProperty}`);
    });
    ```
@@ -1560,15 +1712,15 @@ The `express.static()` middleware in Express.js is used to serve static files su
    To serve static files, you need to set up the `express.static()` middleware and point it to the directory where your static files are located.
 
 ```javascript
-const express = require('express');
+const express = require("express");
 const app = express();
-const path = require('path');
+const path = require("path");
 
 // Serve static files from the "public" directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+  console.log("Server is running on port 3000");
 });
 ```
 
@@ -1601,20 +1753,20 @@ Here’s a more detailed example to illustrate how `express.static()` works:
 1. **Create a Simple Express Application**:
 
 ```javascript
-const express = require('express');
+const express = require("express");
 const app = express();
-const path = require('path');
+const path = require("path");
 
 // Define the directory for static assets
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, "public")));
 
 // Route for the home page
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
 app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+  console.log("Server is running on port 3000");
 });
 ```
 
@@ -1625,17 +1777,17 @@ Create an `index.html` file in the `public` directory:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Static Files Example</title>
-  <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-  <h1>Welcome to the Static Files Example</h1>
-  <img src="/images/logo.png" alt="Logo">
-  <script src="/js/scripts.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Static Files Example</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <h1>Welcome to the Static Files Example</h1>
+    <img src="/images/logo.png" alt="Logo" />
+    <script src="/js/scripts.js"></script>
+  </body>
 </html>
 ```
 
@@ -1649,13 +1801,13 @@ body {
 }
 ```
 
-   - `public/js/scripts.js`:
+- `public/js/scripts.js`:
 
 ```javascript
-console.log('JavaScript file loaded successfully.');
+console.log("JavaScript file loaded successfully.");
 ```
 
-   - `public/images/logo.png`: Place any image file here with the name `logo.png`.
+- `public/images/logo.png`: Place any image file here with the name `logo.png`.
 
 ### Benefits of Using `express.static()`
 
@@ -1675,142 +1827,59 @@ console.log('JavaScript file loaded successfully.');
 
 This setup allows you to efficiently serve static files in your Express application.
 
+---
+
 # express.json() middleware?
 
 The `express.json()` middleware in Express.js is used to parse incoming requests with JSON payloads. It is a built-in middleware function in Express 4.16.0 and higher. When you include this middleware in your application, it automatically parses JSON-formatted request bodies and makes the resulting data available on `req.body`.
 
 If you don't use express.json() or another body-parsing middleware, Express will not automatically parse the JSON payload of incoming requests. As a result, req.body will be undefined, and you won't be able to access the data directly from the request body.
 
-Here’s a basic example of how to use `express.json()`:
-
-1. **Install Express** (if you haven't already):
-
-   ```bash
-   npm install express
-   ```
-
-2. **Set up the Express server**:
-
-   ```javascript
-   const express = require('express');
-   const app = express();
-
-   // Use express.json() middleware
-   app.use(express.json());
-
-   app.post('/data', (req, res) => {
-       // Access parsed JSON data
-       console.log(req.body);
-       res.send('Data received');
-   });
-
-   const PORT = 3000;
-   app.listen(PORT, () => {
-       console.log(`Server is running on port ${PORT}`);
-   });
-   ```
-
-In this example:
-
-- `app.use(express.json())`: This line applies the `express.json()` middleware globally to the application. It will parse JSON payloads for all routes defined after this line.
-- The `POST /data` route expects a JSON payload. The parsed data will be available on `req.body`.
-
-If you send a POST request to `/data` with a JSON body like `{ "name": "John", "age": 30 }`, `req.body` will contain this object, allowing you to easily access and manipulate the data.
-
 ---
 
 # Can you extract query paramater values coming with URL from request in Express applications?
 
-Yes, you can extract query parameter values from the URL in Express applications. Query parameters are the part of the URL that comes after the question mark `?`, and they are usually in key-value pairs, separated by an ampersand `&`.
-
 In Express, you can access these query parameters through the `req.query` object.
 
-### Example
-
-Here’s an example of how to extract query parameter values in an Express application:
-
-1. **Setting up the Express Application**:
-   First, you need to set up a basic Express application.
-
 ```javascript
-const express = require('express');
+const express = require("express");
 const app = express();
 
-app.get('/search', (req, res) => {
-  // Extracting query parameters
+app.get("/search", (req, res) => {
   const query = req.query.query;
-  const page = req.query.page || 1; // Default to page 1 if not provided
-
-  // Responding with the extracted query parameters
+  const page = req.query.page || 1;
   res.send(`Search query: ${query}, Page: ${page}`);
 });
 
 app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+  console.log("Server is running on port 3000");
 });
 ```
 
-2. **Accessing Query Parameters**:
-   - In the route handler for `/search`, `req.query` is used to access the query parameters.
-   - If the URL is `http://localhost:3000/search?query=express&page=2`, `req.query.query` will be `express`, and `req.query.page` will be `2`.
-   - If `page` is not provided in the query parameters, it defaults to `1`.
-
-### Example URLs and Responses
-
-- **URL**: `http://localhost:3000/search?query=express&page=2`
-  - **Response**: `Search query: express, Page: 2`
-
-- **URL**: `http://localhost:3000/search?query=express`
-  - **Response**: `Search query: express, Page: 1` (since `page` is defaulted to 1)
-
-### Handling Multiple Query Parameters
-
-If your URL has multiple query parameters, you can access them all using `req.query`.
-
-```javascript
-app.get('/products', (req, res) => {
-  const category = req.query.category;
-  const sortBy = req.query.sortBy;
-
-  res.send(`Category: ${category}, Sort by: ${sortBy}`);
-});
-```
-
-### Example URLs and Responses
-
-- **URL**: `http://localhost:3000/products?category=electronics&sortBy=price`
-  - **Response**: `Category: electronics, Sort by: price`
-
-### Summary
-
-- Use `req.query` to access query parameters in Express.
-- Query parameters are accessible as key-value pairs.
-- You can provide default values for query parameters if they are not present in the URL.
-
-### References
-- [Express.js Documentation on req.query](https://expressjs.com/en/api.html#req.query)
+- In the route handler for `/search`, `req.query` is used to access the query parameters.
+- If the URL is `http://localhost:3000/search?query=express&page=2`, `req.query.query` will be `express`, and `req.query.page` will be `2`.
+- If `page` is not provided in the query parameters, it defaults to `1`.
 
 ---
 
 # Difference table between package.json & package-lock.json:
 
-
-| Feature                       | `package.json`                              | `package-lock.json`                              |
-|-------------------------------|---------------------------------------------|--------------------------------------------------|
-| Purpose                       | Describes the project and its dependencies  | Locks the dependency tree                        |
-| Creation                      | Created manually by developers              | Automatically generated by npm                   |
-| Includes                      | Basic project metadata, scripts, dependencies, and version ranges | Exact versions of dependencies and sub-dependencies |
-| Version Range                 | Allows specifying version ranges (e.g., `^1.0.0`, `~1.0.0`) | Stores exact versions of installed packages       |
-| Dependency Tree               | Does not provide the full dependency tree   | Provides a complete dependency tree              |
-| Human-Readable                | Designed to be read and edited by humans    | Not typically edited manually                    |
-| Consistency Across Installs   | Can lead to variations due to version ranges | Ensures consistent installs across environments  |
-| VCS (Version Control Systems) | Should be included in version control       | Should be included in version control            |
-| Regeneration                  | Not regenerated unless manually edited      | Regenerated when `npm install` or `npm update` is run |
-
+| Feature                       | `package.json`                                                    | `package-lock.json`                                   |
+| ----------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------- |
+| Purpose                       | Describes the project and its dependencies                        | Locks the dependency tree                             |
+| Creation                      | Created manually by developers                                    | Automatically generated by npm                        |
+| Includes                      | Basic project metadata, scripts, dependencies, and version ranges | Exact versions of dependencies and sub-dependencies   |
+| Version Range                 | Allows specifying version ranges (e.g., `^1.0.0`, `~1.0.0`)       | Stores exact versions of installed packages           |
+| Dependency Tree               | Does not provide the full dependency tree                         | Provides a complete dependency tree                   |
+| Human-Readable                | Designed to be read and edited by humans                          | Not typically edited manually                         |
+| Consistency Across Installs   | Can lead to variations due to version ranges                      | Ensures consistent installs across environments       |
+| VCS (Version Control Systems) | Should be included in version control                             | Should be included in version control                 |
+| Regeneration                  | Not regenerated unless manually edited                            | Regenerated when `npm install` or `npm update` is run |
 
 ### Example Contents:
 
 **package.json:**
+
 ```json
 {
   "name": "my-project",
@@ -1827,6 +1896,7 @@ app.get('/products', (req, res) => {
 ```
 
 **package-lock.json:**
+
 ```json
 {
   "name": "my-project",
@@ -1840,11 +1910,12 @@ app.get('/products', (req, res) => {
       "integrity": "sha512-...",
       "requires": {
         "body-parser": "~1.19.0",
-        "debug": "2.6.9",
+        "debug": "2.6.9"
         // more dependencies...
       }
     }
   }
 }
 ```
-----
+
+---
