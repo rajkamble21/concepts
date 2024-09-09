@@ -337,18 +337,10 @@ Node.js is an open-source, cross-platform, JavaScript runtime environment that a
 3. **Microservices**
 4. **Command-Line Tools**
 
-## can't do 
+### can't do 
 
 - Dom manupulation
 - can not excess browser specific api's
-
-
-### Popular Frameworks and Libraries for Node.js:
-
-1. **Express.js**: A minimal and flexible Node.js web application framework that provides a robust set of features for building web and mobile applications.
-2. **Koa.js**: Created by the same team behind Express, Koa aims to be a smaller, more expressive, and more robust foundation for web applications and APIs.
-3. **Socket.io**: Enables real-time, bidirectional, and event-based communication between web clients and servers.
-4. **NestJS**: A framework for building efficient, reliable, and scalable server-side applications, heavily inspired by Angular.
 
 ---
 
@@ -606,121 +598,19 @@ The `url` module makes it easy to work with URLs in Node.js applications, provid
 
 # Do you know what NPM is and why do we use them?
 
-Yes, I can explain that! **NPM** stands for **Node Package Manager**. It is the default package manager for Node.js and is essential for managing libraries and dependencies in Node.js applications. Here’s why and how we use NPM:
+**NPM** stands for **Node Package Manager**. It is the default package manager for Node.js and is essential for managing libraries and dependencies in Node.js applications. 
 
 ### Why Use NPM?
 
-1. **Dependency Management**:
+1. **Dependency Management**: NPM simplifies the process of installing and managing libraries and dependencies. When you use external libraries, NPM ensures they are downloaded and available for use in your project.
 
-   - NPM simplifies the process of installing and managing libraries and dependencies. When you use external libraries, NPM ensures they are downloaded and available for use in your project.
+2. **Package Management**: It allows you to publish your own packages so others can use them. You can also install packages published by others to utilize their functionality.
 
-2. **Package Management**:
+3. **Version Control**: NPM handles versioning of packages, making it easy to specify and manage versions of dependencies in your project. You can also easily update or revert to previous versions.
 
-   - It allows you to publish your own packages so others can use them. You can also install packages published by others to utilize their functionality.
+4. **Scripts and Automation**: NPM supports running scripts defined in the `package.json` file. This is useful for automating tasks like testing, building, and deploying applications.
 
-3. **Version Control**:
-
-   - NPM handles versioning of packages, making it easy to specify and manage versions of dependencies in your project. You can also easily update or revert to previous versions.
-
-4. **Scripts and Automation**:
-
-   - NPM supports running scripts defined in the `package.json` file. This is useful for automating tasks like testing, building, and deploying applications.
-
-5. **Community and Ecosystem**:
-   - NPM has a vast repository of open-source packages available through the NPM registry. This ecosystem provides a wide range of tools, frameworks, and libraries that accelerate development.
-
-### Basic Commands
-
-Here are some fundamental NPM commands:
-
-- **Initialize a Project**:
-
-  ```bash
-  npm init
-  ```
-
-  This command creates a `package.json` file, which manages your project’s dependencies and scripts.
-
-- **Install a Package**:
-
-  ```bash
-  npm install <package-name>
-  ```
-
-  Installs a package and adds it to the `dependencies` section of `package.json`.
-
-- **Install a Development Dependency**:
-
-  ```bash
-  npm install <package-name> --save-dev
-  ```
-
-  Installs a package as a development dependency, typically for testing or building.
-
-- **Install All Dependencies**:
-
-  ```bash
-  npm install
-  ```
-
-  Installs all the dependencies listed in the `package.json` file.
-
-- **Run a Script**:
-
-  ```bash
-  npm run <script-name>
-  ```
-
-  Runs a script defined in the `scripts` section of `package.json`.
-
-- **Publish a Package**:
-
-  ```bash
-  npm publish
-  ```
-
-  Publishes your package to the NPM registry.
-
-- **Update Packages**:
-  ```bash
-  npm update
-  ```
-  Updates all installed packages to their latest versions according to the version ranges specified in `package.json`.
-
-### Example Usage
-
-1. **Creating a New Project**:
-
-   ```bash
-   mkdir my-new-project
-   cd my-new-project
-   npm init -y  # Initializes a new project with default settings
-   ```
-
-2. **Installing Express**:
-
-   ```bash
-   npm install express
-   ```
-
-3. **Running a Script**:
-
-   ```json
-   // In package.json
-   "scripts": {
-     "start": "node app.js"
-   }
-   ```
-
-   ```bash
-   npm run start
-   ```
-
-4. **Publishing a Package**:
-   ```bash
-   npm login
-   npm publish
-   ```
+5. **Community and Ecosystem**: NPM has a vast repository of open-source packages available through the NPM registry. This ecosystem provides a wide range of tools, frameworks, and libraries that accelerate development.
 
 ---
 
